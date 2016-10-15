@@ -84,7 +84,7 @@ do {
         }
 
         //入力された文字列をクライアントに返却
-        $talkback =   "[Server] $msg.\n"
+        $talkback =   "[Server] $buff.\n"
                     . "[Client] ";
         socket_write($clientsock, $talkback, strlen($talkback));
 
