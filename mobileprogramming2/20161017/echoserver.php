@@ -6,7 +6,7 @@
  *
  * @access     public
  * @author     M.katsube <katsube@winning-section.net>
- * @copyright M.katsube All Rights reserved
+ * @copyright  M.katsube All Rights reserved
  */
 
 /*--------------------------------------------------------------------
