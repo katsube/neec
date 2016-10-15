@@ -13,7 +13,7 @@
  * 定数定義
  *--------------------------------------------------------------------*/
 define('IPADDRESS', '127.0.0.1');
-define('PORT',           10000);
+define('PORT',       10000);
 
 define('SOCK_BACKLOG',  1);
 define('SOCK_BUFFREAD', 2048);
@@ -33,9 +33,9 @@ print "...Socket setup\n";
 
 // Socket作成
 $sock = socket_create(
-                  AF_INET                 //IPv4
+                  AF_INET           //IPv4
                 , SOCK_STREAM       //通信方式(TCP)
-                , SOL_TCP                //TCP
+                , SOL_TCP           //TCP
         );
 
 // Socketのオプション設定
@@ -60,8 +60,8 @@ do {
 
     // 初期メッセージ
     $initmsg =   "\n"
-                      . "Welcome to My Echo Server.\n"
-                      . "[Client] ";
+               . "Welcome to My Echo Server.\n"
+               . "[Client] ";
 
     // 初期メッセージ返却
     socket_write($clientsock, $initmsg, strlen($initmsg));
@@ -85,7 +85,7 @@ do {
 
         //入力された文字列をクライアントに返却
         $talkback =   "[Server] $msg.\n"
-                           . "[Client] ";
+                    . "[Client] ";
         socket_write($clientsock, $talkback, strlen($talkback));
 
         print "...... [Client] $buff\n";
@@ -123,6 +123,6 @@ exit(0);
  */
 function phpinit(){
     error_reporting(E_ALL);      //全てのエラーと警告を表示
-    set_time_limit(0);                    //スクリプトが実行可能な秒数 0=no limit
-    ob_implicit_flush();                 //自動フラッシュをオン
+    set_time_limit(0);           //スクリプトが実行可能な秒数 0=no limit
+    ob_implicit_flush();         //自動フラッシュをオン
 }
