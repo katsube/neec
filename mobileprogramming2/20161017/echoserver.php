@@ -78,7 +78,7 @@ do {
         }
 
         //内容が空ならsocket_read()に戻る
-        $buff = rtrim($buff);
+        $buff = trim($buff);
         if( empty($buff) ){
             continue;
         }
