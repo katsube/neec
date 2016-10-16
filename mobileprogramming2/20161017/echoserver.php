@@ -15,8 +15,8 @@
 define('IPADDRESS', '127.0.0.1');
 define('PORT',       10000);
 
-define('SOCK_BACKLOG',  1);
-define('SOCK_BUFFREAD', 2048);
+define('SOCK_BACKLOG',       1);
+define('SOCK_BUFFREAD_SIZE', 2048);
 
 
 /*--------------------------------------------------------------------
@@ -72,7 +72,7 @@ do {
     //------------------------------------
     do {
         //リクエスト内容を読み込む
-        $buff = socket_read($clientsock, SOCK_BUFFREAD, PHP_NORMAL_READ);
+        $buff = socket_read($clientsock, SOCK_BUFFREAD_SIZE, PHP_NORMAL_READ);
         if( $buff === false ){
             break 2;
         }
