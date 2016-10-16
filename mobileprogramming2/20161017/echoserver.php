@@ -4,9 +4,9 @@
  *
  * クライアントから入力された文字列をそのまま返却する
  *
- * @access     public
- * @author     M.katsube <katsube@winning-section.net>
+ * @author     M.katsube < katsube@winning-section.net >
  * @copyright  M.katsube All Rights reserved
+ * @license    The MIT License < https://opensource.org/licenses/mit-license.php >
  */
 
 /*--------------------------------------------------------------------
@@ -84,7 +84,7 @@ do {
         }
 
         //入力された文字列をクライアントに返却
-        $talkback =   "[Server] $buff.\n"
+        $talkback =   "[Server] $buff\n"
                     . "[Client] ";
         socket_write($clientsock, $talkback, strlen($talkback));
 
