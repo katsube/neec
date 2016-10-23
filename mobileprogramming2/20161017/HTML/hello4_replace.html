@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Hello4 JavaScript</title>
+<script type="text/javascript">
+		window.onload = function(){
+			var elementTd = document
+				.getElementsByClassName('column');
+		if( confirm("rewrite?") ){			
+				for(var i=0; i<elementTd.length; i++){
+					elementTd[i].innerHTML = 'foooooo';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+
+<table border="1">
+<tr>
+	<td class="column">aaa</td>
+	<td class="column">bbb</td>
+</tr>
+</table>
+	
+</body>
+</html>
