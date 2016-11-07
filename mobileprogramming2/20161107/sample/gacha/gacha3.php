@@ -18,6 +18,7 @@ while( ($data = fgets($fp)) !== false ){
 	 $chara[] = $buff;
 }
 fclose($fp);
+
 $card = [];
 for($i=0; $i<$loop; $i++){
 	$rand = mt_rand(0, count($chara)-1);
