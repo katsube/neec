@@ -4,7 +4,7 @@
  *
  * @author     M.Katsube <katsubemakito@gmail.com>
  * @copyright  Copyright ©2016 M.Katsube All Rights Reserved.
- * @lisence    MIT license
+ * @license    MIT license
  */
 class Gacha{
     private $datafile = 'data.csv';
@@ -38,7 +38,7 @@ class Gacha{
     function drop(){
         // 取り出すキャラを決定
         $len = count($this->chara);     //キャラクター数をカウント
-        $i   = mt_rand(0, $len-1);      //0〜$lenの中からランダムに1つだけ数値を作成
+        $i   = mt_rand(0, $len-1);      //0〜$len-1の中からランダムに1つだけ数値を作成
         
         //IDを履歴に入れる
         $this->history[] = $this->chara[$i]['id'];
