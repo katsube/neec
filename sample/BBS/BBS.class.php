@@ -167,6 +167,13 @@
 		return($log);
 	}
 
+    /**
+     * エラー画面へ遷移する
+     *
+	 * @param  $cd    string
+     * @return void
+     * @access public
+	 */
 	static function error($cd){
 		header('Location: error.php?cd='.urlencode($cd));
 	}
@@ -219,6 +226,5 @@
 
 		return(true);
 	}
-
 
 }
