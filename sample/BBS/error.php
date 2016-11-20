@@ -27,10 +27,10 @@ $message = BBS::getErrorMessage($cd);
 <title>BBS - Error</title>
 <style type="text/css">
 h1{
-	color: red;
+  color: red;
 }
 #errormsg{
-	color: red;
+  color: red;
 }
 </style>
 </head>
@@ -40,7 +40,7 @@ h1{
 <p id="errormsg"><?php print $message; ?></p>
 
 <form>
-	<input type="button" value="前の画面に戻る" onclick="history.back()">
+  <input type="button" value="前の画面に戻る" onclick="history.back()">
 </form>
 
 </body>

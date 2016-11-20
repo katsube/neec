@@ -17,12 +17,12 @@ require('BBS.class.php');
 //-------------------------------------------
 $bbs = new BBS();
 if( ! $bbs->checkLogFile() ){
-	//エラーコードを取得
-	$cd = $bbs->getErrorCD();
+  //エラーコードを取得
+  $cd = $bbs->getErrorCD();
 
-	//エラー画面に遷移
-	BBS::error($cd);
-	exit(0);
+  //エラー画面に遷移
+  BBS::error($cd);
+  exit(0);
 }
 
 //-------------------------------------------
@@ -34,24 +34,24 @@ $mode = isset($_REQUEST['mode'])?  $_REQUEST['mode']:null;
 // ログファイルに書き込む
 //-------------------------------------------
 if($mode === BBS::MODE_WRITE){
-	$name    = $_REQUEST['handlename'];
-	$message = $_REQUEST['message'];
+  $name    = $_REQUEST['handlename'];
+  $message = $_REQUEST['message'];
 
-	//--------------
-	// validation
-	//--------------
-	if( ($name === '') || ($message === '') ){
-		BBS::error(BBS::ERRORCD_VALIDATION);
-		exit(0);
-	}
+  //--------------
+  // validation
+  //--------------
+  if( ($name === '') || ($message === '') ){
+    BBS::error(BBS::ERRORCD_VALIDATION);
+    exit(0);
+  }
 
-	//--------------
-	//書き込み
-	//--------------
-	if( ! $bbs->addLog($name, $message) ){
-		BBS::error(BBS::ERRORCD_WRITING);
-		exit(0);
-	}
+  //--------------
+  //書き込み
+  //--------------
+  if( ! $bbs->addLog($name, $message) ){
+    BBS::error(BBS::ERRORCD_WRITING);
+    exit(0);
+  }
 }
 ?><!DOCTYPE html>
 <html>
@@ -62,25 +62,25 @@ if($mode === BBS::MODE_WRITE){
 <style type="text/css">
 /** 書き込み **/
 .log{
-	border: 1px solid gray;
-	margin: 5px;
-	padding: 5px;
+  border: 1px solid gray;
+  margin: 5px;
+  padding: 5px;
 }
 
 /** 名前 **/
 .handlename{
-	font-weight: bold;	/* 太字 */
+  font-weight: bold;  /* 太字 */
 }
 
 /** 書き込み時間  **/
 .timestamp{
-	color: gray;		/* 文字色を灰色 */
-	font-size: 80%;		/* 文字サイズを少し小さく */
+  color: gray;       /* 文字色を灰色 */
+  font-size: 80%;    /* 文字サイズを少し小さく */
 }
 
 /** 書き込み内容  **/
 .message{
-	/* 指定なし */
+  /* 指定なし */
 }
 </style>
 </head>
@@ -92,16 +92,16 @@ if($mode === BBS::MODE_WRITE){
 <input type="hidden" name="mode" value="<?php print BBS::MODE_WRITE ?>">
 <table>
 <tr>
-	<td>Name</td>
-	<td><input type="text" name="handlename"></td>
+  <td>Name</td>
+  <td><input type="text" name="handlename"></td>
 </tr>
 <tr>
-	<td>Message</td>
-	<td><textarea name="message" rows="5" cols="60"></textarea></td>
+  <td>Message</td>
+  <td><textarea name="message" rows="5" cols="60"></textarea></td>
 </tr>
 <tr>
-	<td></td>
-	<td><input type="submit" value="write!"></td>
+  <td></td>
+  <td><input type="submit" value="write!"></td>
 </tr>
 </table>
 </form>
@@ -111,27 +111,27 @@ if($mode === BBS::MODE_WRITE){
 
 <!-- [書き込み表示] -->
 <?php
-	//-------------------------------------------
-	// ログ表示
-	//-------------------------------------------
-	$log    = $bbs->getLog();
-	$length = count($log);
-	if($length >= 1){
-		for($i=0; $i<$length; $i++){
-			printf(
-				  '<div class="log">'
-				. '  <span class="handlename">%s</span><br> <span class="message">%s</span><br> <span class="timestamp">(%s)</span>'
-				. '</div>'
-					
-				, $log[$i]['name']
-				, $log[$i]['message']
-				, $log[$i]['timestamp']
-			);
-		}
-	}
-	else{
-		printf('<h3>書き込みがまだありません</h3>');
-	}
+  //-------------------------------------------
+  // ログ表示
+  //-------------------------------------------
+  $log    = $bbs->getLog();
+  $length = count($log);
+  if($length >= 1){
+    for($i=0; $i<$length; $i++){
+      printf(
+          '<div class="log">'
+        . '  <span class="handlename">%s</span><br> <span class="message">%s</span><br> <span class="timestamp">(%s)</span>'
+        . '</div>'
+          
+        , $log[$i]['name']
+        , $log[$i]['message']
+        , $log[$i]['timestamp']
+      );
+    }
+  }
+  else{
+    printf('<h3>書き込みがまだありません</h3>');
+  }
 ?>
 <!-- [/書き込み表示] -->
 
