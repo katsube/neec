@@ -1,3 +1,8 @@
+git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+[user]
+	name = Makito Katsube
+	email = katsubemakito@gmail.com
 [https]
 	proxy = http://cache4.hac.neec.ac.jp:8080
 [http]
