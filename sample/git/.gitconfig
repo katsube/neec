@@ -1,0 +1,13 @@
+[user]
+	name = Makito Katsube
+	email = katsubemakito@gmail.com
+[https]
+	proxy = http://cache4.hac.neec.ac.jp:8080
+[http]
+	proxy = http://cache4.hac.neec.ac.jp:8080
+[push]
+	default = simple
+[credential]
+	helper = cache --timeout=28800
+[color]
+	ui = auto
