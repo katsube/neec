@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Hello WebAPI</title>
+</head>
+<body>
+
+<div id="result"></div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $.ajax({
+          url: "http://10.60.235.27/api/hello.php"
+        , dataType: "json"
+        , success: function( json ) {
+              $("#result").html(json["str1"]+json["str2"]+"!");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
